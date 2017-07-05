@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin register</title>
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../assets/styles.css" rel="stylesheet" media="screen">
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../vendors/flot/excanvas.min.js"></script><![endif]-->
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="../vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body id="login">
+<div  class="container" >
+
+    <!-- wizard -->
+    <div class="row-fluid section">
+        <!-- block -->
+        <div class="block">
+            <div class="navbar navbar-inner block-header">
+                <div class="muted pull-left">서비스 신청</div>
+            </div>
+            <div class="block-content collapse in">
+                <form >
+
+                    <div class="block-content collapse in">
+                        <div class="span12">
+                            <div id="rootwizard">
+                                <div class="navbar">
+
+                                    <div class="container">
+                                        <ul>
+                                            <li><a href="#tab1" data-toggle="tab">개인 정보</a></li>
+                                            <li><a href="#tab2" data-toggle="tab">회사 정보</a></li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="tab1">
+
+                                        <fieldset class="span6">
+                                            <div class="control-group">
+                                                <label class="control-label" for="email">이메일</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="email" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="jumin1">주민번호 앞자리</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="jumin1" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="jumin2">주민번호 뒷자리</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="jumin2" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="name">성명</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="name" type="text" value="">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="span6">
+
+                                            <div class="control-group">
+                                                <label class="control-label" for="phone">핸드폰 번호</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="phone" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="bank_owner">개인 예금주</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="bank_owner" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="bank_name">개인 은행명</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="bank_name" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="bank_account">은행 계좌</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="bank_account" type="text" value="">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                    </div>
+                                    <div class="tab-pane" id="tab2">
+
+                                        <fieldset class="span6">
+                                            <div class="control-group">
+                                                <label class="control-label" for="company_name">회사명</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="company_name" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="company_id">회사 ID</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="company_id" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="president">대표자명</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="president" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="c_phone">회사 전화번호</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="c_phone" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="c_fax">회사 팩스번호</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="c_fax" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="c_postnum">우편번호</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="c_postnum" type="text" value="">
+                                                </div>
+                                            </div>
+
+                                        </fieldset>
+                                        <fieldset>
+                                            <div class="control-group">
+                                                <label class="control-label" for="c_address1">주소</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="c_address1" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="c_address2">상세주소</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="c_address2" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="c_LawNumber">법인 사업자등록번호</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="c_LawNumber" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="c_bank_owner">법인 예금주</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="c_bank_owner" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="c_bank_name">법인 은행명</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="c_bank_name" type="text" value="">
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="c_bank_account">법인 계좌번호</label>
+                                                <div class="controls">
+                                                    <input class="input-xlarge focused" id="c_bank_account" type="text" value="">
+                                                </div>
+                                            </div>
+
+                                        </fieldset>
+
+                                    </div>
+
+                                    <fieldset>
+
+                                    <ul class="pager wizard">
+
+                                        <li class="previous"><a href="javascript:void(0);">이전</a></li>
+
+                                        <li class="next"><a href="javascript:void(0);">다음</a></li>
+                                        <li class="next finish" style="display:none;"><a href="javascript:;">신청</a></li>
+                                    </ul>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <!-- /block -->
+    </div>
+    <!-- /wizard -->
+
+
+</div> <!-- /container -->
+<link href="../vendors/datepicker.css" rel="stylesheet" media="screen">
+<link href="../vendors/uniform.default.css" rel="stylesheet" media="screen">
+<link href="../vendors/chosen.min.css" rel="stylesheet" media="screen">
+
+<link href="../vendors/wysiwyg/bootstrap-wysihtml5.css" rel="stylesheet" media="screen">
+
+<script src="../vendors/jquery-1.9.1.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../vendors/jquery.uniform.min.js"></script>
+<script src="../vendors/chosen.jquery.min.js"></script>
+<script src="../vendors/bootstrap-datepicker.js"></script>
+
+<script src="../vendors/wysiwyg/wysihtml5-0.3.0.js"></script>
+<script src="../vendors/wysiwyg/bootstrap-wysihtml5.js"></script>
+
+<script src="../vendors/wizard/jquery.bootstrap.wizard.min.js"></script>
+
+<script type="text/javascript" src="../vendors/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="../assets/form-validation.js"></script>
+
+<script src="../assets/scripts.js"></script>
+
+
+<script src="../js/my_js/_DB_query.js"></script>
+<script src="../js/my_js/_member_register.js"></script>
+
+<script>
+
+    jQuery(document).ready(function() {
+        FormValidation.init();
+    });
+
+
+    $(function() {
+        $(".datepicker").datepicker();
+        $(".uniform_on").uniform();
+        $(".chzn-select").chosen();
+        $('.textarea').wysihtml5();
+
+        $('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
+            var $total = navigation.find('li').length;
+            var $current = index+1;
+            var $percent = ($current/$total) * 100;
+            $('#rootwizard').find('.bar').css({width:$percent+'%'});
+            // If it's the last tab then hide the last button and show the finish instead
+            if($current >= $total) {
+                $('#rootwizard').find('.pager .next').hide();
+                $('#rootwizard').find('.pager .finish').show();
+                $('#rootwizard').find('.pager .finish').removeClass('disabled');
+            } else {
+                $('#rootwizard').find('.pager .next').show();
+                $('#rootwizard').find('.pager .finish').hide();
+            }
+        }});
+        $('#rootwizard .finish').click(function() {
+            //alert('서비스 신청!');
+            member.member_register();
+        });
+    });
+</script>
+</body>
+</html>

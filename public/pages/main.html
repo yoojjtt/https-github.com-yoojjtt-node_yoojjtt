@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <title>Admin Home Page test</title>
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+    <link href="../assets/styles.css" rel="stylesheet" media="screen">
+    <link href="../assets/DT_bootstrap.css" rel="stylesheet" media="screen">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="../vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <style> .highlight { background-color:#ccffff; }
+    #jb-container {
+        width: 940px;
+        margin: 10px auto;
+        padding: 20px;
+        border: 1px solid #bcbcbc;
+    }
+    #jb-header {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #bcbcbc;
+    }
+    #jb-content {
+        width: 580px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: left;
+        border: 1px solid #bcbcbc;
+    }
+    #jb-sidebar {
+        width: 260px;
+        padding: 20px;
+        margin-bottom: 20px;
+        float: right;
+        border: 1px solid #bcbcbc;
+    }
+    #jb-footer {
+        clear: both;
+        padding: 20px;
+        border: 1px solid #bcbcbc;
+    }
+    @media ( max-width: 480px ) {
+        #jb-container {
+            width: auto;
+        }
+        #jb-content {
+            float: none;
+            width: auto;
+        }
+        #jb-sidebar {
+            float: none;
+            width: auto;
+        }
+    }
+    </style>
+</head>
+
+<body>
+
+
+<!-- Main Pannel -->
+<div class="container-fluid">
+    <div class="row-fluid" style="height:800px">
+        <!--/span-->
+        <div class="span12" id="content">
+
+            <!-- FIRST FLOOR ------------------------------------------------------------>
+            <div class="row-fluid">
+
+
+                <div class="span12">
+
+                    <ul class="nav nav-tabs" role="tablist" id="myTab">
+
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">직원등록</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">세금등록</a></li>
+
+                    </ul>
+
+                    <div class="tab-content">
+
+
+                        <div role="tabpanel" class="tab-pane" id="messages">
+                            <div id="jb-container">
+                                <div id="jb-header">
+                                    <h1>Responsive Layout</h1>
+                                </div>
+                                <div id="jb-content">
+                                    <h2>Content</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
+                                </div>
+                                <div id="jb-sidebar">
+                                    <h2>Sidebar</h2>
+                                    <ul>
+                                        <li>Lorem</li>
+                                        <li>Ipsum</li>
+                                        <li>Dolor</li>
+                                    </ul>
+                                </div>
+                                <div id="jb-footer">
+                                    <p>Copyright</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane active" id="profile">
+                            <div id="jb-container">
+                                <div id="jb-header">
+                                    <h1>Responsive Layout</h1>
+                                </div>
+                                <div id="jb-content">
+                                    <h2>Content</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis nulla. Phasellus lacinia tempus mauris eu laoreet. Proin gravida velit dictum dui consequat malesuada. Aenean et nibh eu purus scelerisque aliquet nec non justo. Aliquam vitae aliquet ipsum. Etiam condimentum varius purus ut ultricies. Mauris id odio pretium, sollicitudin sapien eget, adipiscing risus.</p>
+                                </div>
+                                <div id="jb-sidebar">
+                                    <h2>Sidebar</h2>
+                                    <ul>
+                                        <li>Lorem</li>
+                                        <li>Ipsum</li>
+                                        <li>Dolor</li>
+                                    </ul>
+                                </div>
+                                <div id="jb-footer">
+                                    <p>Copyright</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+            <!-- END First floor  -->
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+</div>
+<!--/.fluid-container-->
+<script src="../vendors/jquery-1.9.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+<script src="../assets/scripts.js"></script>
+
+
+<script src="../js/my_js/_DB_query.js"></script>
+
+<script src="../js/my_js/_static.js"></script>
+
+<script src="../js/my_js/_auth.js"></script>
+
+<script>
+    var name = get_Cookie('sess_name');  //cookies 없다면 login 페이지로 redirect
+    var id = get_Cookie('sess_user_ids');
+    var companyName = get_Cookie('sess_companyName');
+/*
+    function comInfo(num, companyName, gubun_val) {
+
+        company_base.companyNum_load(gubun_val, companyName);
+        company_tax.companyTax_load(num);
+        company_member.companyMemberload(num);
+    }
+*/
+    function btn_group(gubun){
+        company_base.companyNum_load(gubun, companyName);
+
+    }
+    /*
+    $('tbody').on("click", "tr", function(){
+       $(this).toggleClass('highlight');
+       var target = $('.highlight');
+        target.not($(this)).removeClass("highlight");
+    });
+    */
+
+      /*
+    function modal(modal_name){
+        parent._callModal(modal_name);
+    }
+    */
+    /*
+    $('.btn.add').click(function(){
+       //alert($(this).text());
+       var html = $(this).parent().siblings().eq(1).children().find('tbody').children().children().eq(1).text();
+        var html2 = $(this).find('tbody').children().eq(1).html();
+
+        alert(html);
+        alert(html2);
+    });
+*/
+
+    /*
+    $('#logout_submit').click(function(){
+        session.session_logout();
+    });
+    */
+</script>
+<script>
+    $(function () {
+        $('#myTab a:first').tab('show')
+    })
+</script>
+
+
+<script src="../vendors/datatables/js/jquery.dataTables.min.js"></script>  <!-- data를 부르고 난뒤에 dt 만들것 -->
+<script src="../assets/DT_bootstrap.js"></script>
+</body>
+
+
+</html>

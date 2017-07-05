@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+    <link href="assets/styles.css" rel="stylesheet" media="screen">
+    <link href="assets/DT_bootstrap.css" rel="stylesheet" media="screen">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+    <title>main</title>
+
+    <style>
+        @media screen and ( max-width: 768px ) {
+            #iframe_contents{
+                width: auto;
+                padding:0px;
+
+            }
+
+        }
+
+        #iframe_contents{
+            width:1535px;
+            height:800px;
+            padding-top:80px;
+
+        }
+    </style>
+</head>
+<body>
+<!-- top_nav_bar-->
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div style="display:none" id="com_info" class="brand"></div>
+            <div class="nav-collapse collapse" data-role="navbar">
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="/" role="button" class="dropdown-toggle" data-toggle="dropdown"> <span id= "user_name"></span> <i class="icon-user"></i> <i id="com_info"class="caret"></i>
+                            <strong id="com_num" hidden style="color:black;"></strong>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a tabindex="-1" onClick="navbar_move('profile');" href="#">Profile</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a onClick="logout()" tabindex="-1" href="">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul id="top_navbar" class="nav" >
+                    <li class="active">
+                        <a onClick="navbar_move('main');" href="#">회사관리</a>
+                    </li>
+                    <li class="dropdown">
+                        <a onClick="navbar_move('main');" href="#">현장관리</a>
+                    </li>
+                    <li class="dropdown">
+                        <a onClick="navbar_move('main');" href="#">재무관리</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+
+<!-- END top_nav_bar-->
+
+
+
+<!-- contnents -->
+<div class="contents">
+    <iframe name="iframe_contents"
+            id="iframe_contents"
+            width="100%" height="100%"
+            frameborder="0"
+            scrolling="no">
+    </iframe>
+</div>
+<!-- contents -->
+
+
+<hr>
+<footer>
+    <p>&copy; Jong tae World </p>
+</footer>
+
+
+
+
+<!--/.fluid-container-->
+<script src="vendors/jquery-1.9.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
+<script src="assets/scripts.js"></script>
+
+<script src="js/my_js/_DB_query.js"></script>
+<script src="js/my_js/_static.js"></script>
+
+<script src="js/my_js/_auth.js"></script>
+<script>
+    var name = get_Cookie('sess_name');
+    var company_no = get_Cookie('sess_company_no');
+    var type = get_Cookie('sess_type');
+    var phone = get_Cookie('sess_phone');
+
+    if(name == false){  //cookie  없으면 로그인페이지로 redirect
+        location.href="/pages/login.html";
+
+    }else{ // 로그인 성공하면,
+
+        $('#user_name').append(type+": " + name);  //메인화면 우측 상단 사용자 이름
+        $('#com_info').append(company_no); // 메인화면 좌측 상단 로고
+        navbar_move("main"); //main 페이지를 로드하면서 페이지 시작
+    }
+
+    function logout(){  //logout, cookie, session 삭제
+        auth.logout_process();
+    }
+
+    function navbar_move(loadpage){ // nav bar click할 경우
+        var company_num = $('#com_num').text();
+        _callFrame("/pages/"+loadpage+".html", company_num, 'R');
+    }
+
+    function _callFrame(loadPage, num, gubun_val){  // navbar에서 다른 탭 누를시 contents 페이지 변경
+            //alert(num);
+            document.getElementById('iframe_contents').src = loadPage;
+            document.getElementById('iframe_contents').onload = function() {
+                //var target = document.getElementById('iframe_contents').contentWindow;
+                //target.comInfo(num, companyName, gubun_val);
+            };
+
+    }
+
+
+
+
+
+
+</script>
+<script src="vendors/datatables/js/jquery.dataTables.min.js"></script>  <!-- data를 부르고 난뒤에 dt 만들것 -->
+<script src="assets/DT_bootstrap.js"></script>
+
+</body>
+</html>

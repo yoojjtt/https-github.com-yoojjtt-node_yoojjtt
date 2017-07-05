@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+    <!-- Bootstrap -->
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../assets/styles.css" rel="stylesheet" media="screen">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="../vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body id="login">
+<div class="container">
+
+    <form method="post" action="" class="form-signin">
+        <h2 class="form-signin-heading">Haeinn Admin</h2>
+        <input id="company_id"  type="text" class="input-block-level" placeholder="회사 ID">
+        <input id="user_phone"  type="text" class="input-block-level" placeholder="사용자 핸드폰번호">
+        <input id="user_pwd"  type="password" class="input-block-level" placeholder="주민번호 뒷자리">
+
+        <button id="login_submit" class="btn btn-large btn-primary" type="button">로그인</button>
+        <a type="button" href="../pages/register.html" class="btn btn-large btn-success">서비스 신청</a>
+    </form>
+
+</div> <!-- /container -->
+<script src="../vendors/jquery-1.9.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/my_js/_static.js"></script>
+<script src="../js/my_js/_DB_query.js"></script>
+<script src="../js/my_js/_auth.js"></script>
+<script>
+
+    $('#login_submit').click(function(){
+         auth.login_process();
+    });
+</script>
+</body>
+</html>
